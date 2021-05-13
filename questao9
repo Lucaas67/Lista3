@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<locale.h>
+#include<ctype.h>
+#include<string.h>
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+char sexo, corOlhos, corCabelo;
+int idade, habitantes, i, homens, mulheres, nada, azuis, verdes, castanhos, pretos, loiros, soma=0, maior=0, menor=0, n;
+	
+	printf("Por favor, informe a quantidade de habitantes: ");
+	scanf("%i", &habitantes);
+	
+	for(i=0;i<habitantes;i++){
+		printf("Informe o sexo do %dº habitante (M - masculino e F - feminino): ", i + 1);
+		scanf("%s", &sexo);
+		sexo = toupper(sexo);
+		if (sexo == 'M')
+			homens++;
+		else if (sexo == 'F') 
+			mulheres++; 
+		else 
+			nada++;
+		
+		printf("\n|A - Azul||V - Verde||C - Castanho|| P - Preto| ");
+		printf("\nInforme a cor dos olhos do %dº habitante: ", i + 1);
+		scanf("%s", &corOlhos);
+		corOlhos = toupper(corOlhos);
+		if(corOlhos == 'A')
+			azuis++;
+		else if (corOlhos == 'V')
+			verdes++;
+		else if (corOlhos == 'C')
+			castanhos++;
+		else if (corOlhos == 'P')
+			pretos++;
+		else printf("Essa cor não está no nosso sistema ");	
+		
+		printf("\n|L - Loiro||C - Castanho||P - Preto|");
+		printf("\nInforme a cor dos cabelos do %dº habitante: ", i + 1);
+		scanf("%s", &corCabelo);
+		corCabelo = toupper(corCabelo);
+		if(corCabelo == 'L')
+			loiros++;
+		else if (corCabelo == 'C')
+			castanhos++;
+		else if (corCabelo == 'P')
+			pretos++;
+		else printf("Essa cor não está no nosso sistema ");
+		
+		printf("\nPor favor, informe a idade do %dº habitante: ", i + 1);
+		scanf("%i", &idade);
+		soma = soma + idade;
+       	if (idade > maior)
+           maior = idade;
+       	if (idade < menor && idade != 0)
+           menor = idade;
+        n = mulheres+verdes+loiros;  
+    }
+
+	printf("A maior idade entre os habitantes é: %i", maior);
+	printf("\nA quantidade de habitantes do sexo feminino com olhos verdes e cabelos loiros é: %i ", n);
+	
+
+	return 0;
+}
