@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<locale.h>
+#include<ctype.h>
+int main(){
+char sexo;
+int mediaAluno, mediaAluna;  	
+float nota, qntAluno, qntAluna;
+	
+	while(nota >= 0){
+		while((sexo != 'M') && (sexo != 'm') && (sexo != 'F') && (sexo != 'f')){
+			printf("Digite o sexo (M para Masculino e F para Feminino): ");
+			scanf("%c", &sexo);
+		}
+		printf("\nQual a nota? ");
+		scanf("%f", &nota);
+		
+		if(nota >= 0){
+			if((sexo == 'M') || (sexo == 'm')) {
+				qntAluno++;
+				mediaAluno += nota;
+			}else{
+				qntAluna++;
+				mediaAluna += nota;
+			}
+		}
+
+		sexo = 'V';
+	}
+	
+	mediaAluno = mediaAluno / qntAluno;
+	mediaAluna = mediaAluna / qntAluna;
+	
+	printf("\nA média de nota dos %d homens: %.2f", qntAluno, mediaAluno);
+	printf("\nA média de nota das %d mulheres: %.2f\n", qntAluna, mediaAluna);	
+	
+
+	
+	
+
+	
+	return 0;
+}
