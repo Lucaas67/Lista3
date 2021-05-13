@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<locale.h>
+int main(){
+int n, contador, fat = 1;
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("Digite o valor de N: ");
+	scanf("%d", &n);
+	
+	if(n > 0){
+		contador = n;
+		
+		while(contador > 0){
+			fat *= contador;
+			contador--;
+		}
+	}
+	
+	printf("O fatorial de N é: %d", fat);
+	
+	return 0;
+}
