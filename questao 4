@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<locale.h> 
+int main(){
+int n, contador;
+float h;
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("Digite quantos vezes H será calculado: ");
+	scanf("%d", &n);
+	
+	for(contador = 1; contador <= n; contador++);{
+		h += 1.0/contador;
+	}
+	
+	printf("O valor de H é: %.2f", h);
+	
+	return 0;
+}
