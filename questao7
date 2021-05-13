@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<locale.h>
+int main(){
+int abacaxi=0, maca=0, pera=0, contador, produto;
+	setlocale(LC_ALL, "Portuguese");
+
+	while(produto != 4){
+		
+	printf("==================================\n");
+	printf("\nMenu:\n");
+	printf("\nAperte [1] para abacaxi\n");
+	printf("Aperte [2] para maças\n");
+	printf("Aperte [3] para peras\n");
+	printf("Aperte [4] para finalizar o pedido\n");
+	printf("\n==================================\n");
+	printf("\nAgora, selecione a opção que deseja: ");
+	scanf("%d", &produto);
+	
+	switch(produto){
+		case 1: 
+			printf("\nQuantos abacaxis serão comprados? ");
+			scanf("%i", &abacaxi);
+			break;
+		case 2: 
+			printf("\nQuantas maças serão compradas? ");
+			scanf("%i", &maca);
+			break;
+		case 3: 
+			printf("\nQuantas peras serão compradas? ");
+			scanf("%i", &pera);
+			break;
+		case 4: 
+			printf("\nPedido encerrado!\n");
+			printf("\nO Cliente comprou %d abacaxis, %d maçãs e %d peras", abacaxi, maca, pera);
+	}
+	}
+	
+	return 0;
+}
