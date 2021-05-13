@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+float altura, menor;
+int pessoas, contador = 1;
+	setlocale(LC_ALL, "Portuguese");
+	
+	while(contador <= 10){
+		printf("Informa a altura em metros da %dº pessoa: ", contador);
+		scanf("%f", &altura);
+		
+		if(altura == menor) {
+			pessoas++;
+		}else if((altura < menor) || (menor == 0)){
+			menor = altura;
+		}
+		contador++;
+	}
+	
+	printf("A menor altura é de %.2fm", menor);
+	
+	return 0;
+}
