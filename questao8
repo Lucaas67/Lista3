@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<locale.h>
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	int i, aumento = 10;
+	float qntProdutos, preco[200], id[200], precoNovo, resultado;
+	
+	
+	printf("Olá, por favor, informe a quantidade produtos: ");
+	scanf("%f", &qntProdutos);
+	
+	do{
+	if(qntProdutos<200)
+		printf("OK\n");
+	else printf("\nERRO, devem ter no máximo 200 produtos! ");
+	}while(qntProdutos>200);
+	
+	for(i=0;i<qntProdutos;i++){
+		printf("Digite a identificação do %dº produto: ", i + 1);
+		scanf("%f", &id[i]);
+	
+		printf("Digite o valor do %dº produto: R$ ", i + 1);
+		scanf("%f", &preco[i]);
+		precoNovo = (preco[200]*aumento) / 100;
+		resultado = precoNovo + preco[200];
+	}
+
+	for(i=0;i<qntProdutos;i++){
+		printf("O novo preço do produto %0.0f é: %0.2f\n", id[i], resultado);	
+	}
+	
+	return 0;
+}
